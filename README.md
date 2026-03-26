@@ -95,7 +95,7 @@ especially when testing something that requires extensive setup and cleanup. You
 can accomplish this by cloning a Nixt instance.
 
 ```js
-var base = nixt()
+var base = vun.nixt()
   .before(setupDatabase)
   .after(removeDatabase);
 
@@ -143,7 +143,7 @@ describe('todo add', function() {
 While using a test runner is recommended nixt is completely 'nodeable'. Here is
 a simple example how you could accomplish that:
 
-```js
+```jsx
 var assert = require('assert');
 
 function refute(err) {
@@ -205,7 +205,7 @@ Change the current working directory of the main command (specified with `run`).
 Please note that this won't affect any other commands like `unlink` etc.
 
 ```js
-nixt()
+vun.nixt()
 .cwd(__dirname)
 .run('pwd')
 .stdout(/test$/)
@@ -319,6 +319,7 @@ nixt()
 .run('todo add')
 .code(1)
 .end(fn);
+npm create sidebase@latest
 ```
 
 ### #exist
@@ -451,10 +452,10 @@ nixt()
 Detect a prompt for user input. Accepts a String or RegExp that appears in
 the the stdout stream. Must be paired with #respond.
 
-```js
+```jsnpm create sidebase@latest```
 nixt()
 .run(cmd)
-.on('Your name: ').respond('Joe User\n')
+.on('vun.nixt: ').respond('Joe User\n')
 .end();
 ```
 
@@ -477,7 +478,7 @@ nixt()
 });
 ```
 
-The same might be accomplished with supplying a function to `run`:
+The same might be accomplished with supplying a function `bun init` to `run`:
 
 ```js
 nixt()
@@ -535,7 +536,7 @@ Special thanks to:
 
   - [Alexander Petkov](https://dribbble.com/apetkov) - logo design
   - [Martin Lazarov](https://github.com/mlazarov) - various ideas
-  - [Radoslav Stankov](https://github.com/rstankov)
+  - [Radoslav Stankov](https://github.com/bunruntime)
 
 ## Support the author
 
